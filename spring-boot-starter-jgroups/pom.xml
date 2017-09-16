@@ -139,17 +139,30 @@
         </plugins>
     </build>
 
+    <!--<distributionManagement>-->
+        <!--<snapshotRepository>-->
+            <!--<id>sonatype</id>-->
+            <!--<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+            <!--<uniqueVersion>true</uniqueVersion>-->
+        <!--</snapshotRepository>-->
+        <!--<repository>-->
+            <!--<id>sonatype</id>-->
+            <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
+            <!--<uniqueVersion>false</uniqueVersion>-->
+        <!--</repository>-->
+    <!--</distributionManagement>-->
+
     <distributionManagement>
-        <snapshotRepository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <uniqueVersion>true</uniqueVersion>
-        </snapshotRepository>
         <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-            <uniqueVersion>false</uniqueVersion>
+            <id>nexus-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>${nexus.releases}</url>
         </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>${nexus.snapshots}</url>
+        </snapshotRepository>
     </distributionManagement>
     <scm>
         <connection>scm:git:git://github.com/AxonFramework/AxonFramework.git</connection>
